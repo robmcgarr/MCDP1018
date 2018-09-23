@@ -7,9 +7,9 @@ body {
 	font-weight: 400;
 }
 
-@viewport {
+/*@viewport {
   width: device-width;
-}
+}*/
 
 main {
 	width: 100%;
