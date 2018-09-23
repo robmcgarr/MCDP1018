@@ -1,0 +1,57 @@
+body{
+	background-color: white;
+	font-family: 'Source sans pro', Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: 400;
+	color: black;
+}
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	height: 100vh;
+	max-height: 2fr;
+
+	text-align: center;
+}
+.card1 { 
+	background-color: #00AAFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card2 { 
+	background-color: #0B53D2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card3 { 
+	background-color: #E4F4FB;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card4 { 
+	background-color: #5186B0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card5 { 
+	background-color: #ACC4D6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card6 { 
+	background-color: #356981;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card7 { 
+	background-color: #243C54;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

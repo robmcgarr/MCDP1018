@@ -11,11 +11,11 @@ main {
 	width: 100%;
 }
 
-img {
+/*img {
 	width: 70vw;
-	max-width: 350px;
+	max-width: 300px;
 	height: auto;
-}
+}*/
 
 h2 {
 	font-size: 2.6em;
@@ -24,6 +24,11 @@ h2 {
 
 h3 {
 	font-size: 2.0em;
+	font-weight: 400;
+}
+
+h4 {
+	font-size: 1.6em;
 	font-weight: 400;
 }
 
@@ -37,11 +42,6 @@ li {
 }
 
 
-.block {
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-}
 
 .logo {
 	font-weight: 600;
@@ -73,26 +73,6 @@ li {
     cursor: pointer;
 }
 
-.light {
-	background-color: #e5e5e5;
-	border: 1px solid #cecece;
-}
-
-.dark {
-	background-color: #636363;
-	border: 1px solid black;
-	color: white;
-}
-
-.white {
-	border: 1px solid #cecece;
-}
-
-.black {
-	background-color: #000000;
-	border: 1px solid black;
-	color: #e5e5e5;
-}
 /* END from wire frame */
 
 
@@ -101,83 +81,162 @@ li {
 /* BEGIN NEW LAYOUT */
 
 
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+/* Link (unvisited): The default state that a link resides in*/
+a:link {
+	color:#ACC4D6;
+}
+/* Visited: A link when it has already been visited*/
+a:visited {
+	color:#356981;
+}
+/*A link when it has been focused (for example moved to by a keyboard user using the Tab key or similar*/
+a:focus {
+
+}
+/* A link when it is being hovered over by a user's mouse pointer, */
+a:hover {
+	color: #E4F4FB;
+}
+/*A link when it is being activated (e.g. clicked on)*/
+a:active {
+	color: #0B53D2;
+}
+
+
 .wrapper {
 	max-width: 100%;
 	padding: 3rem 6vw 3rem 6vw;
 }
 
+.wrapper-header {
+	max-width: 100%;
+	padding: 0 6vw;	
+}
+
 
 /* HEADER mobile first */
+
+.header {
+	/*background-color: #000000;*/
+}
+
+.logo {
+	width: 80vw;
+	max-width: 300px;
+
+}
 
 .header-grid {
 	max-width: 800px;
 	margin: 0 auto;
-}
-
-/* COVER mobile first */
-
-.cover {
-	background: 
-		url(../images/medina-courthouse-duotone2.jpg) no-repeat;
-	background-size: cover;
-	background-position: center, center;
-	height: 800px;
 
 }
 
-.cover-headline {
-	grid-area: cover-headline;
+.nav-links {
+    margin: 0 -10px;
+    padding: 0;
+    list-style: none;
+	display: flex;
+	flex-direction: column;
+
 }
 
-.cover-candidate-card {
-	grid-area: cover-candidate-card;
-	text-align: center;
-	background-color: grey;
-	height: 180px;
+.nav-links li {
+    margin: 0 10px;
+    padding: 10px 0;
 }
 
-.cover-issues-card {
-	grid-area: cover-issues-card;
-	text-align: center;
-	background-color: grey;
-	height: 180px;
-}
 
-@media only screen and (min-width: 500px) {
-	.cover-candidate-card,
-	.cover-issues-card  {
-		height: 250px;
+
+@media only screen and (min-width: 700px) {
+	.nav-links {
+		flex-direction: row;
 	}
+	.nav-links li {
+    padding: 10px;
+}
+	.nav-links li:first-child {
+    margin-right: auto;
+}
+}	
+
+/* ALERT mobile first */
+
+.alert-headline {
+	grid-area: alert-headline;
 }
 
-.cover-grid {
+.alert-candidates {
+	grid-area: alert-candidates;
+}
+
+.alert-issues {
+	grid-area: alert-issues;
+}
+
+.alert {
+	background-color: #243C54;
+	color: #ffffff;
+}
+
+.alert-grid {
 	max-width: 800px;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-areas: 
-	"cover-headline" 
-	"cover-candidate-card" 
-	"cover-issues-card";
+	"alert-headline" 
+	"alert-candidates" 
+	"alert-issues";
 	grid-row-gap: 3rem;
+	grid-column-gap: 0;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
 
-	.cover-grid {
+	.alert-grid {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
-		"cover-headline  cover-headline" 
-		"cover-candidate-card  cover-issues-card";
+		"alert-headline  alert-headline" 
+		"alert-candidates  alert-issues";
+		grid-row-gap: 0;
 		grid-column-gap: 3rem;
 	}
 }
 
+/* COVER mobile first */
+
+#cover {
+	
+}
+
+.cover {
+	background: 
+		url(../images/medina-courhouse-duotone3.jpg) no-repeat;
+	background-size: cover;
+	background-position: center, center;
+	height: 70vh;
+	max-width: 100%;
+}
+
+
 
 /* SIGNUP mobile first */
 
-.signup-headline {
-	grid-area: signup-headline;
+.signup-mission {
+	grid-area: signup-mission;
+	text-align: center;
+}
+
+.signup-mission p {
+	font-size: 1.2em;
+	line-height: 1.7em;
 }
 
 .signup-form {
@@ -190,9 +249,17 @@ li {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-areas: 
-	"signup-headline" 
+	"signup-mission" 
 	"signup-form"; 
 	grid-row-gap: 3rem;
+}
+
+.signup {
+	background: 
+	url(../images/map-light3.jpg) no-repeat;
+	background-size: cover;
+	background-position: center, center;
+	height: 100%;
 }
 
 @media only screen and (min-width: 600px) {
@@ -200,8 +267,8 @@ li {
 	.signup-grid {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
-		"signup-headline signup-form"  
-		"signup-headline signup-form";
+		"signup-mission signup-form"  
+		"signup-mission signup-form";
 		grid-column-gap: 3rem;
 	}
 }
@@ -222,6 +289,7 @@ li {
 	grid-row-gap: 3rem;
 }
 
+
 /* CONTACT US mobile first */
 
 .contact-form {
@@ -240,12 +308,36 @@ li {
 
 /* FOOTER mobile first */
 
-.footer-mission {
-	grid-area: footer-mission;
+#footer {
+	background-color: #243C54;
+}
+
+.footer-copyright {
+	text-align: center;
+	font-size: .6em;
+}
+
+.footer-disclaimer {
+	border: .5px solid #ffffff;
+	text-align: center;
+	margin: 1em 0 0 0;
+	padding: 0.8rem;
+}
+
+.footer-about {
+	grid-area: footer-about;
 }
 
 .footer-links {
 	grid-area: footer-links;
+}
+
+.footer-copyright {
+	grid-area: footer-copyright;
+}
+
+.footer-disclaimer {
+	grid-area: footer-disclaimer;
 }
 
 .footer-grid {
@@ -254,9 +346,12 @@ li {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-areas: 
-	"footer-mission" 
-	"footer-links"; 
+	"footer-about" 
+	"footer-links"
+	"footer-disclaimer"
+	"footer-copyright"; 
 	grid-row-gap: 3rem;
+	color: #ffffff;
 }
 
 @media only screen and (min-width: 600px) {
@@ -264,11 +359,14 @@ li {
 	.footer-grid {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
-		"footer-mission  footer-links"  
-		"footer-mission  footer-links";
+		"footer-about  footer-links"  
+		"footer-about  footer-links"
+		"footer-disclaimer  footer-disclaimer"
+		"footer-copyright  footer-copyright";
 		grid-column-gap: 3rem;
 	}
 }
+
 
 /* CADIDATES mobile first */
 
@@ -285,6 +383,21 @@ li {
 	"candidates-list"; 
 	grid-row-gap: 3rem;
 }
+
+.candidates {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+}
+
+.candidates li {
+	background-color: #f2f2f2;
+	padding: 10px;
+}
+
 /*
 .image150 {
 	width: 150px;
@@ -350,4 +463,17 @@ li {
 	grid-row-gap: 3rem;
 }
 
+/* Constant Contact signup form style adjustments */
+
+.ctct-gdpr-text {
+	display: none;
+}
+
+.ctct-form-footer {
+	display: none;
+}
+
+.grecaptcha-badge {
+	display: none;
+}
 
