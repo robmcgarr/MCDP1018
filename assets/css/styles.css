@@ -508,6 +508,13 @@ a:active {
 	color: #243C54;
 }
 
+.introduction {
+	font-size: 1.4em;
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
 .events-list {
 	grid-area: events-list;
 }
