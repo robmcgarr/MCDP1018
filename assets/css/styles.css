@@ -52,7 +52,7 @@ a:link {
 }
 /* Visited: A link when it has already been visited*/
 a:visited {
-	color:#356981;
+	color:#509cbf;
 }
 /*A link when it has been focused (for example moved to by a keyboard user using the Tab key or similar*/
 a:focus {
@@ -128,10 +128,6 @@ a:active {
 
 /* ALERT mobile first */
 
-.alert-registration {
-	font-size: 1.6em;
-	font-weight: 300;
-}
 
 .alert-flex-one {
 	grid-area: alert-flex-one;
@@ -244,13 +240,39 @@ a:active {
 		grid-column-gap: 3rem;
 	}
 	.alert-headline h2 {
-		margin-top: .3em;
+		margin-top: .2em;
 	}
 	.alert-candidates {
 		margin-top: 1.5em;
 	}
 	.alert-events {
 		margin-top: 1.5em;
+	}
+}
+
+/* NOTICE mobile first */
+
+.notice {
+	background-color: #00AAFF;
+	color: #000000;
+}
+
+.notice p {
+	margin: 0 auto;
+	font-size: 1.15em;
+	line-height: 1.7em;
+	text-align: center;
+	max-width: 800px;
+}
+
+.notice p strong {
+	font-weight: 600;
+	color:#ffffff;
+}
+
+@media only screen and (min-width: 450px) {
+	.notice p {
+		text-align: left;
 	}
 }
 
